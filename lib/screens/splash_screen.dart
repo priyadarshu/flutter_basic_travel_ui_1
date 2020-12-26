@@ -7,7 +7,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  final Color mainColor = Color(0xFFf367fc);
+  final Color mainColor = Colors.redAccent[100];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,29 +26,44 @@ class _SplashScreenState extends State<SplashScreen> {
               Positioned(
                 bottom: 90,
                 child: Container(
-                  height: 100,
-                  width: 200,
-                  color: mainColor,
-                  child: Center(
-                    child: Text(
-                      'Sign In',
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
+                  width: MediaQuery.of(context).size.width,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 80),
+                    height: 100,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: mainColor,
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),
               ),
               Positioned(
-                bottom: 250,
-                child: Text('Enjoy every \n  moment!',
+                bottom: 230,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Text(
+                    'Enjoy every \n  moment!',
                     style: GoogleFonts.amiri(
+                      height: 1.2,
                       textStyle: TextStyle(
                         color: Colors.white,
+                        fontWeight: FontWeight.bold,
                         fontSize: 40,
                       ),
-                    )),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
             ],
           ),
